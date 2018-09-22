@@ -30,7 +30,7 @@ namespace SingleSignOn.IdentityServer.InMemoryResources
                         "customAPI.write"
                     },
                     RedirectUris = new List<string> {"https://localhost:44335/signin-oidc"},
-                    PostLogoutRedirectUris = new List<string> { "https://localhost:44335" }
+                    PostLogoutRedirectUris = new List<string> { "https://localhost:44335/signout-callback-oidc" }
                 }
             };
         }

@@ -11,5 +11,10 @@ namespace SingleSignOn.MvcClientApp.Controllers
             await HttpContext.SignOutAsync("Cookies");
             await HttpContext.SignOutAsync("oidc");
         }
+
+        public async Task<IActionResult> SignedOut()
+        {
+            return  View();
+        }
     }
 }

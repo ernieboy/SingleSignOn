@@ -29,6 +29,9 @@ namespace SingleSignOn.MvcClientApp
                 options.ClientId = "openIdConnectClient";
                 options.SignInScheme = "Cookies";
                 options.SaveTokens = true;
+                options.RequireHttpsMetadata = true;
+                options.GetClaimsFromUserInfoEndpoint = true;
+                options.SignedOutRedirectUri = "https://localhost:44335/Account/SignedOut";
             });
 
             services.AddMvc();
