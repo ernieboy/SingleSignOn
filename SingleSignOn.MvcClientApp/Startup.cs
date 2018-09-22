@@ -19,15 +19,16 @@ namespace SingleSignOn.MvcClientApp
         {
             services.AddAuthentication(options =>
             {
-                options.DefaultScheme = "cookie";
+                options.DefaultScheme = "Cookies";
                 options.DefaultChallengeScheme = "oidc";
             })
-            .AddCookie("cookie")
+            .AddCookie("Cookies")
             .AddOpenIdConnect("oidc", options =>
             {
                 options.Authority = "https://localhost:44334/";
                 options.ClientId = "openIdConnectClient";
-                options.SignInScheme = "cookie";
+                options.SignInScheme = "Cookies";
+                options.SaveTokens = true;
             });
 
             services.AddMvc();
